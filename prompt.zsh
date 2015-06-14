@@ -1,3 +1,11 @@
+# If set, parameter expansion, command substitution and arithmetic expansion are
+# performed in prompts. Substitutions within prompts do not affect the command
+# status.
+#
+#     http://zsh.sourceforge.net/Doc/Release/Options.html#index-PROMPTSUBST
+#
+setopt PROMPT_SUBST
+
 # If the PROMPT_SUBST option is set, the prompt string is first subjected to
 # parameter expansion, command substitution and arithmetic expansion.
 #
@@ -15,4 +23,4 @@
 #     http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
 
 # Replicate Debian GNU/Linux bash prompt.
-PROMPT='%n@%M:%~$ '
+PROMPT='%n@%M:%~%(!.#.$) '

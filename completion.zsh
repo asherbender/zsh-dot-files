@@ -1,4 +1,7 @@
 # Initialise completion system.
+#
+#     http://zsh.sourceforge.net/Doc/Release/Completion-System.html#index-compinit
+#
 autoload -Uz compinit
 compinit
 
