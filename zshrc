@@ -16,6 +16,9 @@ source ~/.zsh/prompt.zsh
 # Directory stack settings.
 source ~/.zsh/pushd.zsh
 
+# Fish shell like syntax highlighting.
+source ~/.zsh/syntax-highlighting.zsh
+
 # General options.
 setopt extendedglob
 unsetopt autocd beep
