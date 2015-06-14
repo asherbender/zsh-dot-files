@@ -2,6 +2,7 @@
 #
 #     http://zsh.sourceforge.net/Doc/Release/Completion-System.html#index-compinit
 #
+zmodload zsh/complist
 autoload -Uz compinit
 compinit
 
@@ -73,7 +74,7 @@ setopt AUTO_PARAM_SLASH
 unsetopt MENU_COMPLETE
 
 # If this option is unset, output flow control via start/stop characters
-# (usually assigned to ^S/^Q) is disabled in the shell’s editor.
+# (usually assigned to ^S/^Q) is disabled in the shell's editor.
 #
 #     http://zsh.sourceforge.net/Doc/Release/Options.html#index-FLOWCONTROL
 #
@@ -83,35 +84,9 @@ unsetopt FLOW_CONTROL
 #                               Completion Style
 #------------------------------------------------------------------------------#
 
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
-
-
 # Use caching to make completion for commands such as dpkg and apt usable.
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
-
-# Case-insensitive (all), partial-word, and then substring completion.
-if zstyle -t ':prezto:module:completion:*' case-sensitive; then
-    zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-    setopt CASE_GLOB
-else
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-    unsetopt CASE_GLOB
-fi
-
-# # Group matches and describe.
-# zstyle ':completion:*:*:*:*:*' menu select
-# zstyle ':completion:*:matches' group 'yes'
-# zstyle ':completion:*:options' description 'yes'
-# zstyle ':completion:*:options' auto-description '%d'
-# zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-# zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
-# zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
-# zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-# zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*' verbose yes
 
 # Fuzzy matching of completions (mistyped). Increase the number of errors based
 # on the length of the typed word.
@@ -123,24 +98,41 @@ zstyle ':completion:*:match:*' original only
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 
-# # Don't complete unavailable commands.
-# zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
+# Ignore case during completion.
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# # Array completion element sorting.
-# zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+# Group matches and describe.
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
 
-# # Directories
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-# zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
-# zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
-# zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-# zstyle ':completion:*' squeeze-slashes true
+# Don't complete unavailable commands.
+zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 
-# # History
-# zstyle ':completion:*:history-words' stop yes
-# zstyle ':completion:*:history-words' remove-all-dups yes
-# zstyle ':completion:*:history-words' list false
-# zstyle ':completion:*:history-words' menu yes
+# Array completion element sorting.
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
+# Directories
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
+zstyle ':completion:*' squeeze-slashes true
+
+# History
+zstyle ':completion:*:history-words' stop yes
+zstyle ':completion:*:history-words' remove-all-dups yes
+zstyle ':completion:*:history-words' list false
+zstyle ':completion:*:history-words' menu yes
 
 # # Environmental Variables
 # zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
