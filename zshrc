@@ -13,6 +13,9 @@ source ~/.zsh/colour.zsh
 # Customise the prompt.
 source ~/.zsh/prompt.zsh
 
+# Directory stack settings.
+source ~/.zsh/pushd.zsh
+
 # General options.
 setopt extendedglob
 unsetopt autocd beep
