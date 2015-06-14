@@ -10,5 +10,8 @@ source ~/.zsh/completion.zsh
 # Customise the prompt.
 source ~/.zsh/prompt.zsh
 
+# Allow colours in the terminal.
+source ~/.zsh/colour.zsh
+
 setopt extendedglob
 unsetopt autocd beep
