@@ -1,6 +1,6 @@
 # Fish shell like syntax highlighting.
 #
-#     see https://github.com/zsh-users/zsh-syntax-highlighting
+#     https://github.com/zsh-users/zsh-syntax-highlighting
 #
 # Install using:
 #     git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/contrib/zsh-syntax-highlighting
@@ -36,5 +36,4 @@ if [ -f $SYNTAX ]; then
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none            # Single hyphen options
     ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=none          # Single quoted arguments
     ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold            # Unknown tokens / errors
-
 fi
