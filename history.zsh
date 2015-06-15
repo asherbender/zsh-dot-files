@@ -43,13 +43,13 @@ SAVEHIST=10000
 # If you find that you want more control over when commands get imported, you
 # may wish to turn SHARE_HISTORY off, INC_APPEND_HISTORY or
 # INC_APPEND_HISTORY_TIME (see above) on, and then manually import commands
-# whenever you need them using ‘fc -RI’.
+# whenever you need them using 'fc -RI'.
 #
 #     http://zsh.sourceforge.net/Doc/Release/Options.html#index-SHAREHISTORY
 #
 setopt SHARE_HISTORY
 
-# Save each command’s beginning timestamp (in seconds since the epoch) and the
+# Save each command's beginning timestamp (in seconds since the epoch) and the
 # duration (in seconds) to the history file. The format of this prefixed data
 # is:
 #
@@ -95,7 +95,7 @@ setopt HIST_FCNTL_LOCK
 #
 setopt HIST_REDUCE_BLANKS
 
-# Whenever the user enters a line with history expansion, don’t execute the line
+# Whenever the user enters a line with history expansion, don't execute the line
 # directly; instead, perform history expansion and reload the line into the
 # editing buffer.
 #

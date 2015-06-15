@@ -6,6 +6,16 @@
 #
 bindkey -e
 
+# If you are looking for functions to implement moving over and editing words in
+# the manner of bash, where only alphanumeric characters are considered word
+# characters, you can use the functions described in the next section. The
+# following is sufficient:
+#
+#     http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#ZLE-Functions
+#
+autoload -U select-word-style
+select-word-style bash
+
 # up-line-or-beginning-search, down-line-or-beginning-search
 #     These widgets are similar to the builtin functions up-line-or-search and
 #     down-line-or-search: if in a multiline buffer they move up or down within
