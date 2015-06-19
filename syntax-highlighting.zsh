@@ -9,6 +9,16 @@ SYNTAX=".zsh/contrib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 if [ -f $SYNTAX ]; then
     source $SYNTAX
 
+    # Possible color values:
+    #     black   or 0
+    #     red     or 1
+    #     green   or 2
+    #     yellow  or 3
+    #     blue    or 4
+    #     magenta or 5
+    #     cyan    or 6
+    #     white   or 7
+    #
     # Tone down colours.
     #
     #     see https://github.com/zsh-users/zsh-syntax-highlighting/tree/master/highlighters/main

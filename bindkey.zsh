@@ -4,6 +4,10 @@
 #
 #     http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Zle-Builtins
 #
+# View the keymap using:
+#
+#     bindkey -M emacs
+#
 bindkey -e
 
 # If you are looking for functions to implement moving over and editing words in

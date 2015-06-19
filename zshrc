@@ -23,7 +23,11 @@ source ~/.zsh/autojump.zsh
 source ~/.zsh/syntax-highlighting.zsh
 
 # Load autopredict settings.
-source ~/.zsh/predict.zsh
+#
+# Note: autopredict interacts poorly with up/down-line-or-beginning-search and
+#       complicates <TAB> complete. For now it has been disabled.
+#
+# source ~/.zsh/predict.zsh
 
 # General options.
 setopt extendedglob
