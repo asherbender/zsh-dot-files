@@ -22,12 +22,17 @@ source ~/.zsh/autojump.zsh
 # Fish shell like syntax highlighting.
 source ~/.zsh/syntax-highlighting.zsh
 
+# Load history-search.
+source ~/.zsh/history-search.zsh
+
 # Load autopredict settings.
 #
-# Note: autopredict interacts poorly with up/down-line-or-beginning-search and
-#       complicates <TAB> complete. For now it has been disabled.
+# Note: autopredict interacts poorly with up/down-line-or-beginning-search. It
+#       will operate well with the 'zsh-history-substring-search' module. If
+#       enabled it adds complexity to <TAB> completions.
 #
-# source ~/.zsh/predict.zsh
+source ~/.zsh/predict.zsh
+
 
 # General options.
 setopt extendedglob
