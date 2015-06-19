@@ -1,13 +1,8 @@
-# Fish shell like syntax highlighting. See:
+# Fish shell like syntax highlighting.
 #
 #     https://github.com/zsh-users/zsh-syntax-highlighting
 #
-# Install using:
-#     git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/contrib/zsh-syntax-highlighting
-
-SYNTAX=".zsh/contrib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-if [ -f $SYNTAX ]; then
-    source $SYNTAX
+if [ $#ZSH_HIGHLIGHT_HIGHLIGHTERS -ne 0 ]; then
 
     # Possible color values:
     #     black   or 0

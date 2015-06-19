@@ -1,9 +1,6 @@
-# Fish-like fast/unobtrusive autosuggestions. See:
+# Fish-like fast/unobtrusive autosuggestions.
 #
 #     https://github.com/tarruda/zsh-autosuggestions
-#
-# Install using:
-#     git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh/contrib/zsh-autosuggestions
 #
 # Notes:
 #    - <TAB> in 'predict-on' accepts the entire prediction <TAB> in
@@ -12,9 +9,7 @@
 #      better integration with TAB-completion (word-oriented behaviour rather
 #      than line-oriented behaviour).
 #
-SYNTAX=".zsh/contrib/zsh-autosuggestions/autosuggestions.zsh"
-if [ -f $SYNTAX ]; then
-    source $SYNTAX
+if [ ${AUTOSUGGESTION_HIGHLIGHT_CURSOR} ]; then
 
     # Enable autosuggestions automatically.
     zle-line-init() {

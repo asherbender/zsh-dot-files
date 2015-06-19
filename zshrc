@@ -1,3 +1,31 @@
+#------------------------------------------------------------------------------#
+#                                 Load Plugins
+#------------------------------------------------------------------------------#
+
+# Load zgen. If not installed:
+#
+#     git clone https://github.com/tarjoilija/zgen ~/.zsh/plugins/zgen
+#
+ZGEN_DIR="${HOME}/.zsh/plugins/zgen"
+source "${HOME}/.zsh/plugins/zgen/zgen.zsh"
+
+# Check for init script.
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # Plugins.
+    zgen load https://github.com/zsh-users/zsh-syntax-highlighting
+    zgen load https://github.com/zsh-users/zsh-history-substring-search
+    zgen load https://github.com/tarruda/zsh-autosuggestions
+
+    # Save all to init script.
+    zgen save
+fi
+
+#------------------------------------------------------------------------------#
+#                               Load Customisation
+#------------------------------------------------------------------------------#
+
 # Load history settings.
 source ~/.zsh/history.zsh
 

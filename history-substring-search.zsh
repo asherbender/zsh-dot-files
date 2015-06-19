@@ -1,16 +1,11 @@
-# Fish-like history search feature. See:
+# Fish-like history search feature.
 #
 #     https://github.com/zsh-users/zsh-history-substring-search
-#
-# Install using:
-#     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/contrib/zsh-history-substring-search
 #
 # Note: this is 'preferred' over the native solution as it enables
 #       syntax-highlighting (if enabled) on the history searches.
 #
-SYNTAX=".zsh/contrib/zsh-history-substring-search/zsh-history-substring-search.zsh"
-if [ -f $SYNTAX ]; then
-    source $SYNTAX
+if [ ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND} ]; then
 
     # Bind UP and DOWN arrow keys.
     zmodload zsh/terminfo
