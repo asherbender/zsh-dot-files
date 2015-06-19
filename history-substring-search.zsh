@@ -1,4 +1,9 @@
-# Fish-like history search feature.
+# Fish-like history search feature. See:
+#
+#     https://github.com/zsh-users/zsh-history-substring-search
+#
+# Install using:
+#     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/contrib/zsh-history-substring-search
 #
 # Note: this is 'preferred' over the native solution as it enables
 #       syntax-highlighting (if enabled) on the history searches.

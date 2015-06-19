@@ -1,4 +1,4 @@
-# Fish-like fast/unobtrusive autosuggestions
+# Fish-like fast/unobtrusive autosuggestions. See:
 #
 #     https://github.com/tarruda/zsh-autosuggestions
 #

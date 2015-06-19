@@ -1,4 +1,4 @@
-# Fish shell like syntax highlighting.
+# Fish shell like syntax highlighting. See:
 #
 #     https://github.com/zsh-users/zsh-syntax-highlighting
 #
