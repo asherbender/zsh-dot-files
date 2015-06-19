@@ -13,7 +13,7 @@ source ~/.zsh/colour.zsh
 # Customise the prompt.
 source ~/.zsh/prompt.zsh
 
-# Directory stack settings.
+# Directory stack settings (less useful with autojump enabled).
 source ~/.zsh/pushd.zsh
 
 # Load autojump.
