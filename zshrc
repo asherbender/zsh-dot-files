@@ -23,7 +23,7 @@ source ~/.zsh/autojump.zsh
 source ~/.zsh/syntax-highlighting.zsh
 
 # Load history-search.
-source ~/.zsh/history-search.zsh
+source ~/.zsh/history-substring-search.zsh
 
 # Load autopredict settings.
 #
@@ -31,7 +31,7 @@ source ~/.zsh/history-search.zsh
 #       will operate well with the 'zsh-history-substring-search' module. If
 #       enabled it adds complexity to <TAB> completions.
 #
-source ~/.zsh/predict.zsh
+source ~/.zsh/autosuggestions.zsh
 
 
 # General options.
