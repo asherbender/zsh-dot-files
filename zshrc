@@ -61,6 +61,8 @@ source ~/.zsh/history-substring-search.zsh
 #
 source ~/.zsh/autosuggestions.zsh
 
+# Load aliases
+source ~/.zsh/alias.zsh
 
 # General options.
 setopt extendedglob
