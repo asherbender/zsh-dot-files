@@ -26,14 +26,10 @@ bloat.
 
 The following plugins are used in the `zsh` configuration:
 
-* [zgen](https://github.com/tarjoilija/zgen)
+* [autojump](https://github.com/joelthelion/autojump)
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
 * [zsh-autosuggestions](https://github.com/tarruda/zsh-autosuggestions)
-* [autojump](https://github.com/joelthelion/autojump)
-
-`zgen` was selected over [antigen](https://github.com/zsh-users/antigen) for
-package management to reduce shell start-up times.
 
 ## Installation ##
 
@@ -53,11 +49,6 @@ Make configuration visible:
 ln -s ~/.zsh/zshrc ~/.zshrc
 ```
 
-Clone `zgen`:
-```
-git clone https://github.com/tarjoilija/zgen ~/.zsh/plugins/zgen
-```
-
 If `zsh` is not the default shell:
 ```
 chsh -s $(which zsh)
@@ -67,4 +58,9 @@ For the changes to take affect, log out and log back in. After logging in,
 verify that the `zsh` is running:
 ```
 echo $SHELL
+```
+
+To update the plugins, run:
+```
+zsh-update
 ```

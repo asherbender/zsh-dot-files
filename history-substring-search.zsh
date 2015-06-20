@@ -2,10 +2,14 @@
 #
 #     https://github.com/zsh-users/zsh-history-substring-search
 #
+# Install using:
+#     git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/plugins/zsh-history-substring-search
+#
 # Note: this is 'preferred' over the native solution as it enables
 #       syntax-highlighting (if enabled) on the history searches.
 #
-if [ ${HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND} ]; then
+if [ -d $HISTORY_SUBSTRING_SEARCH ]; then
+    source "${HISTORY_SUBSTRING_SEARCH}/zsh-history-substring-search.zsh"
 
     # Bind UP and DOWN arrow keys.
     zmodload zsh/terminfo

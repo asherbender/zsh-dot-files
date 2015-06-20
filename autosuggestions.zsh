@@ -2,6 +2,9 @@
 #
 #     https://github.com/tarruda/zsh-autosuggestions
 #
+# Install using:
+#     git clone git://github.com/tarruda/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
+#
 # Notes:
 #    - <TAB> in 'predict-on' accepts the entire prediction <TAB> in
 #    - 'autosuggestions' accepts the first unambiguous prediction (usually up to
@@ -9,7 +12,8 @@
 #      better integration with TAB-completion (word-oriented behaviour rather
 #      than line-oriented behaviour).
 #
-if [ ${AUTOSUGGESTION_HIGHLIGHT_CURSOR} ]; then
+if [ -d $AUTOSUGGESTIONS ]; then
+    source "${AUTOSUGGESTIONS}/autosuggestions.zsh"
 
     # Enable autosuggestions automatically.
     zle-line-init() {

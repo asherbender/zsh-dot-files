@@ -1,26 +1,30 @@
 #------------------------------------------------------------------------------#
-#                                 Load Plugins
+#                             Define Dependencies
 #------------------------------------------------------------------------------#
+typeset -A PACKAGES
 
-# Load zgen. If not installed:
+PLUGINS="${HOME}/.zsh/plugins"
+
+# Define local and remote location of syntax highlighting plugin.
+SYNTAX_HIGHLIGHTING="${PLUGINS}/syntax-highlighting"
+PACKAGES[$SYNTAX_HIGHLIGHTING]="https://github.com/zsh-users/zsh-syntax-highlighting"
+
+# Define local and remote location of history substring search plugin.
+HISTORY_SUBSTRING_SEARCH="${PLUGINS}/history-substring-search"
+PACKAGES[$HISTORY_SUBSTRING_SEARCH]="https://github.com/zsh-users/zsh-history-substring-search"
+
+# Define local and remote location of auto-suggestions plugin.
+AUTOSUGGESTIONS="${PLUGINS}/autosuggestions"
+PACKAGES[$AUTOSUGGESTIONS]="https://github.com/tarruda/zsh-autosuggestions"
+
+# If the plugin directories do not exist, clone the repositories. Note that:
 #
-#     git clone https://github.com/tarjoilija/zgen ~/.zsh/plugins/zgen
+#     - package-management only ensures the plugin source-code exists. The
+#       plugins must be loaded manually. This is done in the following section.
 #
-ZGEN_DIR="${HOME}/.zsh/plugins/zgen"
-source "${HOME}/.zsh/plugins/zgen/zgen.zsh"
-
-# Check for init script.
-if ! zgen saved; then
-    echo "Creating a zgen save"
-
-    # Plugins.
-    zgen load https://github.com/zsh-users/zsh-syntax-highlighting
-    zgen load https://github.com/zsh-users/zsh-history-substring-search
-    zgen load https://github.com/tarruda/zsh-autosuggestions
-
-    # Save all to init script.
-    zgen save
-fi
+#     - packages have to be updated manually by calling 'zsh-update'.
+#
+source ~/.zsh/package-management.zsh
 
 #------------------------------------------------------------------------------#
 #                               Load Customisation

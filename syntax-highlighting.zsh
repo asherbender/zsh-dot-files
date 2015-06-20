@@ -2,7 +2,11 @@
 #
 #     https://github.com/zsh-users/zsh-syntax-highlighting
 #
-if [ $#ZSH_HIGHLIGHT_HIGHLIGHTERS -ne 0 ]; then
+# Install using:
+#     git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
+#
+if [ -d $SYNTAX_HIGHLIGHTING ]; then
+    source "${SYNTAX_HIGHLIGHTING}/zsh-syntax-highlighting.zsh"
 
     # Possible color values:
     #     black   or 0
