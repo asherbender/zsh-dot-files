@@ -19,3 +19,7 @@ bindkey -e
 #
 autoload -U select-word-style
 select-word-style bash
+
+# Enable HOME/END keys.
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
