@@ -12,9 +12,8 @@ if [ -d $HISTORY_SUBSTRING_SEARCH ]; then
     source "${HISTORY_SUBSTRING_SEARCH}/zsh-history-substring-search.zsh"
 
     # Bind UP and DOWN arrow keys.
-    zmodload zsh/terminfo
-    bindkey "$terminfo[kcuu1]" history-substring-search-up
-    bindkey "$terminfo[kcud1]" history-substring-search-down
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
 
     # Bind P and N for EMACS mode.
     bindkey -M emacs '^P' history-substring-search-up
@@ -47,9 +46,8 @@ else
     zle -N down-line-or-beginning-search
 
     # Bind UP and DOWN arrow keys.
-    zmodload zsh/terminfo
-    bindkey "$terminfo[kcuu1]" up-line-or-beginning-search
-    bindkey "$terminfo[kcud1]" down-line-or-beginning-search
+    bindkey '^[[A' up-line-or-beginning-search
+    bindkey '^[[B' down-line-or-beginning-search
 
     # Bind P and N for EMACS mode
     bindkey -M emacs '^P' up-line-or-beginning-search
