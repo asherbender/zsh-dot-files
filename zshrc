@@ -65,7 +65,7 @@ source ~/.zsh/history-substring-search.zsh
 #
 source ~/.zsh/autosuggestions.zsh
 
-# Load aliases
+# Load aliases.
 source ~/.zsh/alias.zsh
 
 # General options.

@@ -16,3 +16,6 @@ alias ll='ls -lah'
 
 # Show all refs (branches, tags, etc.) in the Git repository browser.
 alias gitk='gitk --all'
+
+# Print entire history.
+alias history='history 0'
