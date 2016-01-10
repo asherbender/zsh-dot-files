@@ -16,13 +16,13 @@ HISTFILE=~/.zsh_history
 #
 #     http://zsh.sourceforge.net/Doc/Release/Parameters.html#index-HISTSIZE
 #
-HISTSIZE=10000
+HISTSIZE=100000
 
 # The maximum number of history events to save in the history file.
 #
 #     http://zsh.sourceforge.net/Doc/Release/Parameters.html#index-SAVEHIST
 #
-SAVEHIST=10000
+SAVEHIST=100000
 
 #------------------------------------------------------------------------------#
 #                                   Options
