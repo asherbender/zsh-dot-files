@@ -26,8 +26,8 @@ if [ -d $SYNTAX_HIGHLIGHTING ]; then
     ZSH_HIGHLIGHT_STYLES[assign]=none                          # Variable assignments
     ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=none     # Back double quoted arguments
     ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none            # Backquoted expressions
-    ZSH_HIGHLIGHT_STYLES[builtin]=none                         # Shell builtin commands
-    ZSH_HIGHLIGHT_STYLES[command]=none                         # Commands
+    ZSH_HIGHLIGHT_STYLES[builtin]=fg=green,bold                # Shell builtin commands
+    ZSH_HIGHLIGHT_STYLES[command]=fg=green,bold                # Commands
     ZSH_HIGHLIGHT_STYLES[commandseparator]=none                # Command separation tokens
     ZSH_HIGHLIGHT_STYLES[default]=none                         # Parts of the buffer that do not match anything
     ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=none   # Dollar double quoted arguments
@@ -36,12 +36,12 @@ if [ -d $SYNTAX_HIGHLIGHTING ]; then
     ZSH_HIGHLIGHT_STYLES[function]=none                        # Functions
     ZSH_HIGHLIGHT_STYLES[globbing]=none                        # Globbing expressions
     ZSH_HIGHLIGHT_STYLES[hashed-command]=none                  # Hashed commands
-    ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue}           # History expansion expressions
+    ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue            # History expansion expressions
     ZSH_HIGHLIGHT_STYLES[path]=none                            # Paths
     ZSH_HIGHLIGHT_STYLES[path_approx]=none                     # Approximated paths
     ZSH_HIGHLIGHT_STYLES[path_prefix]=none                     # Path prefixes
     ZSH_HIGHLIGHT_STYLES[precommand]=none                      # Precommands (i.e. exec, builtin, ...)
-    ZSH_HIGHLIGHT_STYLES[reserved-word]=none                   # Shell reserved words
+    ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=cyan,bold           # Shell reserved words
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none            # Single hyphen options
     ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=none          # Single quoted arguments
     ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold            # Unknown tokens / errors
