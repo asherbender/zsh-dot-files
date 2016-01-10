@@ -1,2 +1,2 @@
 # Ignore external packages.
-/plugins
+plugins/*/

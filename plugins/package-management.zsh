@@ -10,7 +10,7 @@ zsh-clone-plugins(){
 
 # Update plugins.
 zsh-update() {
-    for repo in "${PLUGINS}"/*; do
+    for repo in "${PLUGINS}"/*/; do
         echo "\nUpdating ${repo}"
         (cd "${repo}" \
             && git pull \

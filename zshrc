@@ -5,17 +5,17 @@ typeset -A PACKAGES
 
 PLUGINS="${HOME}/.zsh/plugins"
 
-# Define local and remote location of syntax highlighting plugin.
-SYNTAX_HIGHLIGHTING="${PLUGINS}/syntax-highlighting"
-PACKAGES[$SYNTAX_HIGHLIGHTING]="https://github.com/zsh-users/zsh-syntax-highlighting"
+# Define local and remote location of auto-suggestions plugin.
+AUTOSUGGESTIONS="${PLUGINS}/autosuggestions"
+PACKAGES[$AUTOSUGGESTIONS]="https://github.com/tarruda/zsh-autosuggestions"
 
 # Define local and remote location of history substring search plugin.
 HISTORY_SUBSTRING_SEARCH="${PLUGINS}/history-substring-search"
 PACKAGES[$HISTORY_SUBSTRING_SEARCH]="https://github.com/zsh-users/zsh-history-substring-search"
 
-# Define local and remote location of auto-suggestions plugin.
-AUTOSUGGESTIONS="${PLUGINS}/autosuggestions"
-PACKAGES[$AUTOSUGGESTIONS]="https://github.com/tarruda/zsh-autosuggestions"
+# Define local and remote location of syntax highlighting plugin.
+SYNTAX_HIGHLIGHTING="${PLUGINS}/syntax-highlighting"
+PACKAGES[$SYNTAX_HIGHLIGHTING]="https://github.com/zsh-users/zsh-syntax-highlighting"
 
 # If the plugin directories do not exist, clone the repositories. Note that:
 #
@@ -24,7 +24,7 @@ PACKAGES[$AUTOSUGGESTIONS]="https://github.com/tarruda/zsh-autosuggestions"
 #
 #     - packages have to be updated manually by calling 'zsh-update'.
 #
-source ~/.zsh/package-management.zsh
+source ${PLUGINS}/package-management.zsh
 
 #------------------------------------------------------------------------------#
 #                               Load Customisation
@@ -48,14 +48,22 @@ source ~/.zsh/prompt.zsh
 # Directory stack settings (less useful with autojump enabled).
 source ~/.zsh/pushd.zsh
 
-# Load autojump.
-source ~/.zsh/autojump.zsh
+# Load aliases.
+source ~/.zsh/alias.zsh
 
-# Fish shell like syntax highlighting.
-source ~/.zsh/syntax-highlighting.zsh
+# General options.
+setopt extendedglob
+unsetopt autocd beep
+
+#------------------------------------------------------------------------------#
+#                          Load and Configure Plugins
+#------------------------------------------------------------------------------#
+
+# Load autojump.
+source ${PLUGINS}/autojump.zsh
 
 # Load history-search.
-source ~/.zsh/history-substring-search.zsh
+source ${PLUGINS}/history-substring-search.zsh
 
 # Load autopredict settings.
 #
@@ -63,11 +71,13 @@ source ~/.zsh/history-substring-search.zsh
 #       will operate well with the 'zsh-history-substring-search' module. If
 #       enabled it adds complexity to <TAB> completions.
 #
-source ~/.zsh/autosuggestions.zsh
+source ${PLUGINS}/autosuggestions.zsh
 
-# Load aliases.
-source ~/.zsh/alias.zsh
-
-# General options.
-setopt extendedglob
-unsetopt autocd beep
+# Fish shell like syntax highlighting.
+#
+# Note: zsh-syntax-highlighting.zsh wraps ZLE widgets. It must be sourced after
+#       all custom widgets have been created (i.e., after all zle -N calls and
+#       after running compinit). Widgets created later will work, but will not
+#       update the syntax highlighting.
+#
+source ${PLUGINS}/syntax-highlighting.zsh
