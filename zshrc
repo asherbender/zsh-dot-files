@@ -81,3 +81,38 @@ source ${PLUGINS}/autosuggestions.zsh
 #       update the syntax highlighting.
 #
 source ${PLUGINS}/syntax-highlighting.zsh
+
+#------------------------------------------------------------------------------#
+#                              Local history search
+#------------------------------------------------------------------------------#
+#
+# The SHARE_HISTORY option both imports new commands from the history file, and
+# also causes your typed commands to be appended to the history file. By
+# default, history movement commands visit the imported lines as well as the
+# local lines, but you can toggle this on and off with the set-local-history zle
+# binding. It is also possible to create a zle widget that will make some
+# commands ignore imported commands, and some include them.
+#
+# To allow terminals to share commands/history but preference local history,
+# configure the up/down keys to search the local history. Allow the global
+# history to be searched via the CTRL modifier.
+
+bindkey "${key[Up]}" up-line-or-local-history
+bindkey "${key[Down]}" down-line-or-local-history
+
+up-line-or-local-history() {
+    zle set-local-history 1
+    zle up-line-or-history
+    zle set-local-history 0
+}
+zle -N up-line-or-local-history
+
+down-line-or-local-history() {
+    zle set-local-history 1
+    zle down-line-or-history
+    zle set-local-history 0
+}
+zle -N down-line-or-local-history
+
+bindkey "^[[1;5A" up-line-or-history    # [CTRL] + Cursor up
+bindkey "^[[1;5B" down-line-or-history  # [CTRL] + Cursor down
